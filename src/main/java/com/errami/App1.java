@@ -6,7 +6,6 @@ import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.functions;
 
 public class App1 {
-
     public static void main(String[] args) {
 
         // Initialize Spark session
@@ -15,6 +14,7 @@ public class App1 {
                 .master("local")
                 .getOrCreate();
 
+        // Set the time parser policy to LEGACY
         spark.conf().set("spark.sql.legacy.timeParserPolicy", "LEGACY");
 
         // Load the CSV file
@@ -31,7 +31,7 @@ public class App1 {
                 .count()
                 .orderBy(functions.desc("count"));
 
-        System.out.println("Number of incidents per service:");
+        System.out.println("1- Number of incidents per service:");
         incidentsPerService.show();
 
         // 2. Display the two years with the most incidents
@@ -42,7 +42,7 @@ public class App1 {
                 .count()
                 .orderBy(functions.desc("count"));
 
-        System.out.println("Years with the most incidents:");
+        System.out.println("2- Years with the most incidents:");
         incidentsPerYear.show(2);
 
         // Stop the Spark session
