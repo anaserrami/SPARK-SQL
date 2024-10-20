@@ -21,9 +21,9 @@ public class App1 {
         Dataset<Row> incidentsDF = spark.read()
                 .option("header", "true")  // CSV has a header
                 .option("inferSchema", "true")  // Infer the schema from data
-                .csv("./incidents.csv"); // Replace with the actual file path
+                .csv("./incidents.csv");
 
-        // Show the data (optional, just for debugging)
+        // Show the data
         incidentsDF.show();
 
         // 1. Display the number of incidents per service
@@ -34,7 +34,7 @@ public class App1 {
         System.out.println("Number of incidents per service:");
         incidentsPerService.show();
 
-        // 2. Fix: Parse the date correctly and extract the year
+        // 2. Display the two years with the most incidents
         Dataset<Row> incidentsPerYear = incidentsDF
                 .withColumn("parsed_date", functions.to_date(incidentsDF.col("date"), "MM/dd/yyyy"))  // Parse the date with specified format
                 .withColumn("year", functions.year(functions.col("parsed_date")))  // Extract year from parsed date
@@ -43,7 +43,7 @@ public class App1 {
                 .orderBy(functions.desc("count"));
 
         System.out.println("Years with the most incidents:");
-        incidentsPerYear.show(2);  // Display only the top 2 years
+        incidentsPerYear.show(2);
 
         // Stop the Spark session
         spark.stop();
