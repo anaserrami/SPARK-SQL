@@ -44,14 +44,14 @@ public class App2 {
                 .load();
 
         // 1. Display the number of consultations per day
-        System.out.println("Number of consultations per day:");
+        System.out.println("1- Number of consultations per day:");
         consultationsDf.groupBy("date_consultation")
                 .count()
                 .orderBy("date_consultation")
                 .show();
 
         // 2. Display the number of consultations per doctor (NOM | PRENOM | NOMBRE DE CONSULTATION)
-        System.out.println("Number of consultations per doctor:");
+        System.out.println("2- Number of consultations per doctor:");
         Dataset<Row> medecinConsultationCount = consultationsDf
                 .join(medecinsDf, consultationsDf.col("id_medecin").equalTo(medecinsDf.col("id")))
                 .groupBy("nom", "prenom")
@@ -64,7 +64,7 @@ public class App2 {
                 .show();
 
         // 3. Display for each doctor, the number of distinct patients he has assisted
-        System.out.println("Number of distinct patients per doctor:");
+        System.out.println("3- Number of distinct patients per doctor:");
         Dataset<Row> medecinPatientsCount = consultationsDf
                 .join(medecinsDf, consultationsDf.col("id_medecin").equalTo(medecinsDf.col("id")))
                 .groupBy("nom", "prenom")
