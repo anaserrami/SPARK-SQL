@@ -1,0 +1,21 @@
+Id,titre,description,service,date
+1,System Crash,The system crashed unexpectedly,IT,3/15/2022
+2,Network Outage,No internet connection for 3 hours,IT,1/18/2023
+3,Hardware Failure,Printer not working,Maintenance,5/20/2022
+4,Data Breach,Unauthorized access to sensitive data,Security,7/10/2022
+5,Power Outage,Office lost power for 2 hours,Maintenance,8/3/2023
+6,Software Bug,Application keeps freezing,IT,11/21/2022
+7,Fire Alarm,Fire alarm malfunctioned,Safety,4/12/2022
+8,Network Latency,Slow network response,IT,2/5/2023
+9,Unauthorized Access,Someone accessed a restricted area,Security,6/12/2023
+10,Broken HVAC,Air conditioning is not working,Maintenance,9/23/2022
+11,Phishing Attempt,Received a suspicious email,Security,4/14/2023
+12,Elevator Stuck,Elevator malfunctioned,Maintenance,7/1/2023
+13,Data Loss,Lost critical project data,IT,3/11/2023
+14,Server Overload,Server experienced overload,IT,6/17/2022
+15,Unauthorized Login,Failed login attempts detected,Security,8/29/2022
+16,Broken Chair,Chair in the meeting room is broken,Maintenance,5/9/2023
+17,Water Leak,Water leak in the bathroom,Maintenance,10/19/2022
+18,System Downtime,Server was down for maintenance,IT,12/30/2022
+19,Software Installation,New software installed on all machines,IT,9/15/2023
+20,Alarm Test Failure,Scheduled alarm test failed,Safety,2/24/2022
